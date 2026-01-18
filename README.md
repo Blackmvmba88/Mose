@@ -69,6 +69,25 @@ Después de eso, **la pantalla te pertenece**.
 
 ---
 
+## 🧪 Testing
+
+MOSE incluye un sistema de pruebas completo con 23 tests:
+
+```bash
+# Ejecutar todas las pruebas
+python run_tests.py
+
+# O con pytest
+pytest tests/
+
+# Ver cobertura
+pytest tests/ --cov=main --cov-report=html
+```
+
+Para más información, consulta [TESTING.md](TESTING.md).
+
+---
+
 ## 🌌 ¿Por qué existe MOSE?
 
 Porque:
