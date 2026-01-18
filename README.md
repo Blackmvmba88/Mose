@@ -101,6 +101,25 @@ MOSE es un paso pequeño hacia interfaces más **orgánicas, accesibles y humana
 
 ---
 
+## 🌌 Hacia dónde vamos
+
+MOSE no es un mouse alternativo.
+Es un intento de demostrar que el cuerpo ya es una interfaz.
+
+Próximas etapas visualizadas:
+
+* 🧠 **Aprendizaje por usuario** → Calibración persistente que mejora con el tiempo
+* 👁️ **Gesto ocular compuesto** → Doble parpadeo, mirada sostenida, patrones de movimiento
+* 🔌 **API para aplicaciones externas** → Otros programas pueden recibir eventos oculares
+* 🤖 **Integración con asistentes IA** → "Mirar + comando" = cyborg vibes
+* 🌐 **Modo navegación web** → Navegar internet sin manos, con gestos específicos
+* 🎨 **Modo creación** → Herramientas optimizadas para diseño, dibujo y edición
+
+Cuando mirar sea suficiente para actuar, la pantalla dejará de ser un objeto
+y se convertirá en extensión del sistema nervioso.
+
+---
+
 ## 🧬 Estado del proyecto
 
 MOSE está vivo.
