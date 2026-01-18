@@ -52,20 +52,72 @@ Solo tú y la máquina llegando a un acuerdo.
 ## 🔧 Requisitos
 
 * Python **3.9 o superior**
-* Cámara web funcional
+* Cámara web funcional (480p mínimo, 720p+ recomendado)
 * Un entorno con buena iluminación
-* Paciencia durante la calibración (vale la pena)
+* 4GB RAM mínimo (8GB recomendado)
 
 ---
 
-## 🚀 Ejecución
+## 📦 Instalación
+
+### Instalación Rápida
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/Blackmvmba88/Mose.git
+cd Mose
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar MOSE
 python main.py
 ```
 
-Sigue las instrucciones en pantalla para calibrar tu mirada.
-Después de eso, **la pantalla te pertenece**.
+### Instalación Detallada
+
+Para instrucciones completas específicas de tu plataforma (Windows/macOS/Linux), 
+consulta **[INSTALLATION.md](INSTALLATION.md)**.
+
+---
+
+## 🚀 Uso
+
+### Inicio Rápido
+
+```bash
+# Versión original (monolítica)
+python main.py
+
+# O versión modular (mejor organizada)
+python main_modular.py
+```
+
+> **Nota**: Ambas versiones funcionan de la misma manera. La versión modular (`main_modular.py`) 
+> tiene mejor organización del código pero la funcionalidad es idéntica. Usa la que prefieras.
+
+### Calibración
+
+1. Presiona **'c'** para iniciar la calibración
+2. Aparecerán 5 círculos amarillos en la pantalla
+3. Mira directamente cada círculo y presiona **ESPACIO**
+4. Repite para los 5 puntos (esquinas y centro)
+5. ¡Calibración completa! Ahora controla el cursor con tu mirada
+
+### Controles
+
+- **'c'**: Iniciar/reiniciar calibración
+- **'q'**: Salir de MOSE
+- **Parpadeo rápido**: Hacer clic
+
+### Consejos para Mejor Rendimiento
+
+- Mantén tu rostro bien iluminado
+- Evita luz directa detrás de ti (contraluz)
+- Mantén distancia de 40-80cm de la cámara
+- Mantén tu cabeza relativamente estable
+- Si el cursor está nervioso, aumenta el `smoothing_buffer_size` en `config.ini`
+- Si hay mucho lag, reduce el `smoothing_buffer_size`
 
 ---
 
@@ -122,9 +174,7 @@ y se convertirá en extensión del sistema nervioso.
 
 ## 🧬 Estado del proyecto
 
-MOSE está vivo.
-Funciona.
-Y puede evolucionar.
+MOSE está vivo, funciona y evoluciona.
 
 Para ver la hoja de ruta completa, consulta la sección **"Hacia dónde vamos"** arriba.
 
@@ -135,12 +185,43 @@ Para ver la hoja de ruta completa, consulta la sección **"Hacia dónde vamos"**
 Este proyecto está hecho con amor y dedicación.
 Dedicado a **Iyari Cancino Gomez**.
 
+Para cada persona que alguna vez sintió que la tecnología no estaba diseñada para ellos.
+Este templo también es tuyo.
+
 ---
 
 ## 📜 Licencia
 
-Libre para aprender.
-Libre para modificar.
-Libre para mejorar.
+MOSE está licenciado bajo **GNU General Public License v3.0 (GPL-3.0)**.
 
-Si lo usas, **hazlo avanzar**.
+Esto significa que:
+- ✅ Puedes usarlo libremente
+- ✅ Puedes estudiarlo y modificarlo
+- ✅ Puedes redistribuirlo
+- ✅ Puedes distribuir versiones modificadas
+
+Bajo la condición de que tus modificaciones también sean GPL-3.0.
+
+Ver [LICENSE](LICENSE) para el texto completo.
+
+---
+
+## 🙏 Agradecimientos
+
+- **MediaPipe**: Por la increíble tecnología de Face Mesh
+- **OpenCV**: Por las herramientas de visión por computadora
+- **La comunidad de código abierto**: Por hacer esto posible
+
+---
+
+## 📞 Contacto y Soporte
+
+- **Issues**: [GitHub Issues](https://github.com/Blackmvmba88/Mose/issues)
+- **Discusiones**: [GitHub Discussions](https://github.com/Blackmvmba88/Mose/discussions)
+- **Email**: [Próximamente]
+
+---
+
+**MOSE** — Donde la mirada se encuentra con la acción. 🧿👁️
+
+*Versión 1.1.0 - Actualizado: Enero 2026*

@@ -1,14 +1,48 @@
+# Virtual environments
 venv/
+env/
+ENV/
+.venv
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Environment variables
 .env
+.env.local
+
+# Jupyter
 .ipynb_checkpoints/
-.coverage
-.pytest_cache/
-htmlcov/
-*.egg-info/
-dist/
+
+# Build artifacts
 build/
-test_results.txt
-coverage.xml
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+.tmp/
+/tmp/
