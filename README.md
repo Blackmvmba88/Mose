@@ -60,7 +60,7 @@ Solo tú y la máquina llegando a un acuerdo.
 
 ## 📦 Instalación
 
-### Instalación Rápida
+### Instalación como Aplicación
 
 ```bash
 # Clonar el repositorio
@@ -73,6 +73,22 @@ pip install -r requirements.txt
 # Ejecutar MOSE
 python main.py
 ```
+
+### Instalación como Librería (API)
+
+```bash
+# Instalar desde el código fuente
+pip install -e .
+
+# Usar en tu código Python
+from mose import events
+
+for event in events():
+    if event.type == "blink_click":
+        print("¡Click detectado!")
+```
+
+> **Nota**: La instalación vía PyPI (`pip install mose`) estará disponible próximamente.
 
 ### Instalación Detallada
 
@@ -140,6 +156,28 @@ Para más información, consulta [TESTING.md](TESTING.md).
 
 ---
 
+## 🔌 API para Desarrolladores
+
+MOSE expone una API simple de eventos para integración con otras aplicaciones:
+
+```python
+from mose import events
+
+# Consumir eventos de eye-tracking
+for event in events():
+    if event.type == "blink_click":
+        print(f"Click en: {event.data['position']}")
+    elif event.type == "gaze_move":
+        print(f"Mirada movida a: {event.data['position']}")
+```
+
+Ver ejemplos completos en [`examples/`](examples/):
+- `simple_api_usage.py` — Uso básico de la API
+- `click_logger.py` — Logger de clicks
+- `custom_integration.py` — Integración personalizada
+
+---
+
 ## 🌌 ¿Por qué existe MOSE?
 
 Porque:
@@ -158,17 +196,32 @@ MOSE es un paso pequeño hacia interfaces más **orgánicas, accesibles y humana
 MOSE no es un mouse alternativo.
 Es un intento de demostrar que el cuerpo ya es una interfaz.
 
-Próximas etapas visualizadas:
+Para ver la **hoja de ruta completa** con 6 hitos clave, consulta **[ROADMAP.md](ROADMAP.md)**.
+
+**Próximas etapas destacadas:**
 
 * 🧠 **Aprendizaje por usuario** → Calibración persistente que mejora con el tiempo
 * 👁️ **Gesto ocular compuesto** → Doble parpadeo, mirada sostenida, patrones de movimiento
-* 🔌 **API para aplicaciones externas** → Otros programas pueden recibir eventos oculares
+* 🔌 **API para aplicaciones externas** → ✅ **COMPLETADO en v1.1.0**
 * 🤖 **Integración con asistentes IA** → "Mirar + comando" = cyborg vibes
 * 🌐 **Modo navegación web** → Navegar internet sin manos, con gestos específicos
 * 🎨 **Modo creación** → Herramientas optimizadas para diseño, dibujo y edición
 
 Cuando mirar sea suficiente para actuar, la pantalla dejará de ser un objeto
 y se convertirá en extensión del sistema nervioso.
+
+---
+
+## 🤝 Contribuir
+
+MOSE es un proyecto comunitario. Todas las contribuciones son bienvenidas:
+
+- 💬 **[Discussions](https://github.com/Blackmvmba88/Mose/discussions)** — Ideas, preguntas, feedback
+- 🐛 **[Issues](https://github.com/Blackmvmba88/Mose/issues)** — Reportar bugs o solicitar features
+- 🚀 **[Pull Requests](https://github.com/Blackmvmba88/Mose/pulls)** — Contribuir código
+- 🌱 **[Good First Issues](GOOD_FIRST_ISSUES.md)** — Ideas para primeros contribuidores
+
+Lee **[CONTRIBUTING.md](CONTRIBUTING.md)** para más información.
 
 ---
 

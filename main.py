@@ -137,6 +137,10 @@ class OcularisMose:
         self.cap.release()
         cv2.destroyAllWindows()
 
-if __name__ == "__main__":
+def main():
+    """Entry point for console script"""
     app = OcularisMose()
     app.run()
+
+if __name__ == "__main__":
+    main()
