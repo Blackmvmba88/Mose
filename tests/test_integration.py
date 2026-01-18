@@ -4,11 +4,7 @@ Integration tests for OcularisMose system.
 import unittest
 from unittest.mock import Mock, patch, MagicMock, call
 import numpy as np
-import sys
-import os
 import time
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from main import OcularisMose
 
