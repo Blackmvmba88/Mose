@@ -4,6 +4,9 @@ import pyautogui
 import numpy as np
 import time
 
+# NOTE: This is the original monolithic version (v1.0) for compatibility.
+# For the modular version with better code organization, see main_modular.py
+
 class OcularisMose:
     def __init__(self):
         # Initialize MediaPipe Face Mesh

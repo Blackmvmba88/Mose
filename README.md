@@ -86,8 +86,15 @@ consulta **[INSTALLATION.md](INSTALLATION.md)**.
 ### Inicio Rápido
 
 ```bash
+# Versión original (monolítica)
 python main.py
+
+# O versión modular (mejor organizada)
+python main_modular.py
 ```
+
+> **Nota**: Ambas versiones funcionan de la misma manera. La versión modular (`main_modular.py`) 
+> tiene mejor organización del código pero la funcionalidad es idéntica. Usa la que prefieras.
 
 ### Calibración
 

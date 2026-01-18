@@ -12,6 +12,7 @@ from mose.core.blink_detector import BlinkDetector
 from mose.core.gaze_to_cursor import GazeToCursor
 from mose.ui.calibration import Calibrator
 from mose.ui.feedback_overlay import FeedbackOverlay
+from mose.config import Config
 
 
 class OcularisMose:
@@ -22,8 +23,16 @@ class OcularisMose:
     gaze-to-cursor mapping, calibration, and visual feedback.
     """
     
-    def __init__(self):
-        """Initialize MOSE with all components."""
+    def __init__(self, config_file='config.ini'):
+        """
+        Initialize MOSE with all components.
+        
+        Args:
+            config_file: Path to configuration file
+        """
+        # Load configuration
+        self.config = Config(config_file)
+        
         # Get screen dimensions
         screen_w, screen_h = pyautogui.size()
         
@@ -31,19 +40,30 @@ class OcularisMose:
         self.face_detector = FaceDetector(
             max_num_faces=1,
             refine_landmarks=True,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5
+            min_detection_confidence=self.config.get_float('detection', 'min_detection_confidence'),
+            min_tracking_confidence=self.config.get_float('detection', 'min_tracking_confidence')
         )
         self.eye_tracker = EyeTracker()
-        self.blink_detector = BlinkDetector(threshold=0.0045, cooldown=0.3)
-        self.gaze_mapper = GazeToCursor(screen_w, screen_h, buffer_size=8)
+        self.blink_detector = BlinkDetector(
+            threshold=self.config.get_float('blink', 'threshold'),
+            cooldown=self.config.get_float('blink', 'cooldown')
+        )
+        self.gaze_mapper = GazeToCursor(
+            screen_w, screen_h, 
+            buffer_size=self.config.get_int('gaze', 'smoothing_buffer_size')
+        )
         
         # Initialize UI components
         self.calibrator = Calibrator()
         self.feedback = FeedbackOverlay()
         
         # Camera setup
-        self.cap = cv2.VideoCapture(0)
+        camera_index = self.config.get_int('camera', 'camera_index')
+        self.cap = cv2.VideoCapture(camera_index)
+        
+        # UI settings
+        self.show_iris_markers = self.config.get_bool('ui', 'show_iris_markers')
+        self.show_instructions = self.config.get_bool('ui', 'show_instructions')
     
     def run(self):
         """Main application loop."""
@@ -83,13 +103,15 @@ class OcularisMose:
                     self._handle_tracking_mode(image, iris_x, iris_y, landmarks)
                 
                 # Draw iris markers
-                self.feedback.draw_iris_markers(image, landmarks)
+                if self.show_iris_markers:
+                    self.feedback.draw_iris_markers(image, landmarks)
             
             # Draw click indicator if active
             self.feedback.draw_click_indicator(image)
             
             # Draw instructions
-            self.feedback.draw_instructions(image)
+            if self.show_instructions:
+                self.feedback.draw_instructions(image)
             
             # Show the window
             cv2.imshow('MOSE Control Panel', image)
