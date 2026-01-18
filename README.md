@@ -126,12 +126,7 @@ MOSE está vivo.
 Funciona.
 Y puede evolucionar.
 
-Ideas futuras:
-
-* Doble parpadeo
-* Zonas de acción
-* Integración con IA adaptativa
-* Entrenamiento personalizado por usuario
+Para ver la hoja de ruta completa, consulta la sección **"Hacia dónde vamos"** arriba.
 
 ---
 
