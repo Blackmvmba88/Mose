@@ -161,6 +161,189 @@ El código sin documentación es conocimiento perdido. Cada función, cada decis
 
 ---
 
+## 🎯 Validación, Fases y Pruebas
+
+### 🔬 Validación: La Medida del Éxito
+*"Solo lo que se mide puede mejorarse."*
+
+El camino hacia la excelencia requiere criterios claros y medibles. Ocularis Mose establece su validación en tres pilares fundamentales:
+
+#### Criterios de Éxito
+- **Tiempo de calibración**: Menor a 2 minutos para usuario promedio
+- **Tasa de precisión**: 90%+ en movimientos intencionales del cursor
+- **Latencia de respuesta**: Menor a 100ms desde mirada hasta acción
+- **Tasa de falsos positivos (clics)**: Menor al 5%
+- **Accesibilidad**: Compatible con 95%+ de webcams estándar
+- **Satisfacción del usuario**: NPS (Net Promoter Score) mayor a 50
+
+#### Medición de Exactitud del Seguimiento Ocular
+- **Test de precisión estática**: Usuario mantiene mirada fija - cursor debe permanecer dentro de radio de 50px
+- **Test de precisión dinámica**: Seguimiento de objetivos en movimiento con error máximo de 10%
+- **Test de cobertura de pantalla**: Capacidad de alcanzar todos los puntos de la pantalla
+- **Análisis de deriva (drift)**: Medición de desviación acumulativa durante sesiones prolongadas
+- **Métricas de suavizado**: Balance entre responsividad y estabilidad del cursor
+
+#### Evaluación de Experiencia del Usuario
+- **Curva de aprendizaje**: Tiempo hasta dominio funcional (objetivo: <15 minutos)
+- **Fatiga ocular**: Medición de confort durante sesiones de 30+ minutos
+- **Percepción de naturalidad**: Encuestas de "sensación de control"
+- **Casos de uso reales**: Éxito en tareas cotidianas (navegación web, escritura, gaming)
+- **Feedback cualitativo**: Entrevistas profundas con usuarios de diversos perfiles
+
+---
+
+### 🚀 Fases: El Camino del Desarrollo
+*"Roma no se construyó en un día, pero cada día se puso un ladrillo."*
+
+Ocularis Mose evoluciona a través de cuatro fases estratégicas:
+
+#### Fase 1: Prototipo Funcional ✅
+**Objetivo**: Demostrar viabilidad tecnológica
+
+- [x] Implementación del core de seguimiento ocular
+- [x] Sistema de calibración básico (5 puntos)
+- [x] Detección de parpadeo para clics
+- [x] Interfaz de control visual
+- [x] Documentación fundacional
+
+**Estado**: Completada (v1.0)
+
+#### Fase 2: Optimización de Precisión 🔄
+**Objetivo**: Alcanzar precisión de nivel profesional
+
+- [ ] Implementar algoritmos de predicción de movimiento
+- [ ] Suavizado adaptativo basado en velocidad de mirada
+- [ ] Calibración continua en segundo plano
+- [ ] Sistema de zonas de sensibilidad ajustable
+- [ ] Compensación automática de cambios de iluminación
+- [ ] Perfiles de precisión por tipo de tarea
+
+**Timeline**: Q1-Q2 2026
+
+#### Fase 3: Integración de Accesibilidad 📋
+**Objetivo**: Hacerlo verdaderamente universal
+
+- [ ] Modo de alto contraste para interfaces
+- [ ] Sistema de feedback auditivo
+- [ ] Compatibilidad con lectores de pantalla
+- [ ] Configuración simplificada para usuarios no técnicos
+- [ ] Tutoriales interactivos integrados
+- [ ] Soporte multi-idioma (ES, EN, PT, FR)
+- [ ] Optimización para usuarios con condiciones específicas
+
+**Timeline**: Q3 2026
+
+#### Fase 4: Beta Pública 🌍
+**Objetivo**: Validación masiva y refinamiento comunitario
+
+- [ ] Programa de early adopters (100+ testers)
+- [ ] Sistema de telemetría opt-in para mejora continua
+- [ ] Comunidad activa de feedback (Discord/Forum)
+- [ ] Documentación exhaustiva para usuarios finales
+- [ ] Sistema de reportes de bugs integrado
+- [ ] Casos de estudio documentados
+- [ ] Preparación para lanzamiento v2.0 estable
+
+**Timeline**: Q4 2026
+
+---
+
+### 🧪 Pruebas: La Forja de la Calidad
+*"La confianza sin validación es solo esperanza."*
+
+Un sistema que controla la computadora debe ser impecable. Nuestro régimen de pruebas es exhaustivo y multi-dimensional:
+
+#### Pruebas Técnicas
+**Automatizadas y continuas**
+
+- **Unit Testing**: Cada función crítica tiene su batería de pruebas
+  - Detección de iris (landmarks 468, 473)
+  - Mapeo de coordenadas oculares a pantalla
+  - Algoritmos de suavizado y filtrado
+  - Detección de parpadeo (ratio de aspecto del ojo)
+
+- **Integration Testing**: El sistema como organismo completo
+  - Pipeline completo: captura → procesamiento → acción
+  - Manejo de errores y excepciones
+  - Compatibilidad entre componentes (MediaPipe + OpenCV + PyAutoGUI)
+
+- **Performance Testing**: Velocidad y eficiencia
+  - FPS mínimo de 30 frames/segundo
+  - Uso de CPU menor al 30% en hardware estándar
+  - Consumo de RAM menor a 500MB
+  - Tiempo de inicialización menor a 5 segundos
+
+- **Regression Testing**: Protección contra retrocesos
+  - Suite de pruebas ejecutada en cada commit
+  - Validación de precisión contra datasets de referencia
+
+#### Pruebas de Usabilidad
+**Con humanos reales, en escenarios reales**
+
+- **Protocolo de observación directa**: Usuarios realizando tareas sin asistencia
+- **Think-aloud sessions**: Verbalización de experiencia en tiempo real
+- **Task completion rate**: Porcentaje de éxito en tareas específicas
+- **Time-on-task**: Eficiencia comparada con mouse tradicional
+- **Error analysis**: Catalogación y clasificación de fallos de interacción
+
+**Escenarios de prueba**:
+1. Navegación web básica (scrolling, clics, formularios)
+2. Edición de texto (documentos, emails)
+3. Uso creativo (dibujo básico, selección de herramientas)
+4. Gaming casual (juegos de puzzle, point-and-click)
+5. Tareas de productividad (hojas de cálculo, presentaciones)
+
+#### Pruebas de Compatibilidad
+**Garantizando universalidad**
+
+- **Hardware**: 
+  - 20+ modelos de webcam diferentes
+  - Resoluciones desde 480p hasta 4K
+  - Diferentes tasas de FPS (15, 30, 60)
+  - Laptops, desktops, all-in-ones
+
+- **Software**:
+  - Windows 10, 11 (x64, ARM)
+  - macOS Monterey, Ventura, Sonoma (Intel y Apple Silicon)
+  - Ubuntu 22.04 LTS, Fedora 39, Arch Linux
+  - Python 3.9, 3.10, 3.11, 3.12
+
+- **Condiciones ambientales**:
+  - Iluminación natural vs artificial
+  - Iluminación frontal, lateral, posterior
+  - Día vs noche
+  - Diferentes distancias de usuario a cámara (40cm - 80cm)
+
+#### Pruebas con Usuarios Reales
+**La validación definitiva**
+
+- **Perfil diverso de testers**:
+  - Usuarios con movilidad reducida (población objetivo primaria)
+  - Usuarios con lesiones por esfuerzo repetitivo (RSI)
+  - Gamers buscando ventaja competitiva
+  - Profesionales creativos (diseñadores, artistas)
+  - Personas sin experiencia en tecnología asistiva
+
+- **Programa de Beta Testing estructurado**:
+  - Fase Alpha: 10 usuarios cercanos (1 semana)
+  - Fase Beta cerrada: 50 usuarios seleccionados (1 mes)
+  - Fase Beta abierta: 500+ usuarios (3 meses)
+
+- **Métricas de validación real**:
+  - Tasa de retención (uso después de 1 semana, 1 mes)
+  - Casos de uso emergentes no anticipados
+  - Solicitudes de características más demandadas
+  - Barreras de adopción identificadas
+  - Historias de impacto positivo documentadas
+
+- **Feedback Loop**:
+  - Encuestas post-uso (inmediatas y retrasadas)
+  - Sesiones de grupo focal (mensuales)
+  - Canal de comunicación directa (GitHub Issues, Discord)
+  - Sistema de votación de prioridades de features
+
+---
+
 ## 👥 La Comunidad: Constructores del Templo
 
 ### Para Colaboradores
