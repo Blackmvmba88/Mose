@@ -153,54 +153,22 @@ MOSE es un paso pequeño hacia interfaces más **orgánicas, accesibles y humana
 
 ---
 
-## 📚 Documentación
+## 🌌 Hacia dónde vamos
 
-- **[README.md](README.md)**: Este archivo - visión general del proyecto
-- **[INSTALLATION.md](INSTALLATION.md)**: Guía de instalación detallada para todas las plataformas
-- **[ARCHITECTURE.md](ARCHITECTURE.md)**: Documentación técnica del sistema
-- **[CONTRIBUTING.md](CONTRIBUTING.md)**: Guía para contribuir al proyecto
-- **[CHANGELOG.md](CHANGELOG.md)**: Historial de cambios y versiones
+MOSE no es un mouse alternativo.
+Es un intento de demostrar que el cuerpo ya es una interfaz.
 
----
+Próximas etapas visualizadas:
 
-## 🏗️ Arquitectura del Proyecto
+* 🧠 **Aprendizaje por usuario** → Calibración persistente que mejora con el tiempo
+* 👁️ **Gesto ocular compuesto** → Doble parpadeo, mirada sostenida, patrones de movimiento
+* 🔌 **API para aplicaciones externas** → Otros programas pueden recibir eventos oculares
+* 🤖 **Integración con asistentes IA** → "Mirar + comando" = cyborg vibes
+* 🌐 **Modo navegación web** → Navegar internet sin manos, con gestos específicos
+* 🎨 **Modo creación** → Herramientas optimizadas para diseño, dibujo y edición
 
-MOSE está organizado en módulos:
-
-```
-mose/
-├── core/                    # Funcionalidad principal
-│   ├── face_detection.py   # Detección facial con MediaPipe
-│   ├── eye_tracking.py     # Seguimiento de iris
-│   ├── blink_detector.py   # Detección de parpadeos
-│   └── gaze_to_cursor.py   # Mapeo mirada→cursor
-└── ui/                      # Interfaz de usuario
-    ├── calibration.py      # Sistema de calibración
-    └── feedback_overlay.py # Retroalimentación visual
-```
-
-**Tecnologías Clave:**
-- **MediaPipe Face Mesh**: Detección de 478 puntos faciales
-- **OpenCV**: Procesamiento de video
-- **PyAutoGUI**: Control del cursor y clics
-- **NumPy**: Procesamiento numérico
-
-Para detalles técnicos completos, consulta **[ARCHITECTURE.md](ARCHITECTURE.md)**.
-
----
-
-## ⚙️ Configuración
-
-Puedes ajustar el comportamiento de MOSE editando `config.ini`:
-
-```ini
-[blink]
-threshold = 0.0045        # Sensibilidad de clic (menor = más fácil)
-cooldown = 0.3            # Tiempo entre clics (segundos)
-
-[gaze]
-smoothing_buffer_size = 8 # Suavizado (mayor = más suave, más lag)
-```
+Cuando mirar sea suficiente para actuar, la pantalla dejará de ser un objeto
+y se convertirá en extensión del sistema nervioso.
 
 ---
 
@@ -208,79 +176,7 @@ smoothing_buffer_size = 8 # Suavizado (mayor = más suave, más lag)
 
 MOSE está vivo, funciona y evoluciona.
 
-### Versión Actual: 1.1.0
-
-**Completado:**
-- ✅ Sistema de seguimiento ocular funcional
-- ✅ Calibración de 5 puntos
-- ✅ Detección de parpadeos para clics
-- ✅ Arquitectura modular
-- ✅ Documentación completa
-
-**Roadmap:**
-
-#### v1.2 (Próximo)
-- [ ] Filtro de Kalman para mejor suavizado
-- [ ] Soporte multi-idioma (ES/EN/PT)
-- [ ] Tutorial en video
-- [ ] Métricas de rendimiento
-
-#### v2.0 (Futuro)
-- [ ] Soporte multi-monitor
-- [ ] Doble parpadeo y otros gestos
-- [ ] Calibración adaptativa
-- [ ] Zonas configurables
-- [ ] Retroalimentación auditiva
-
-Ver **[CHANGELOG.md](CHANGELOG.md)** para historial completo.
-
----
-
-## 🤝 Contribuir
-
-¡Las contribuciones son bienvenidas! Ya sea reportando bugs, sugiriendo mejoras, 
-o contribuyendo código.
-
-**Formas de contribuir:**
-- 🐛 Reportar bugs usando las [plantillas de issues](.github/ISSUE_TEMPLATE/)
-- 💡 Sugerir nuevas funcionalidades
-- 📖 Mejorar la documentación
-- 🔧 Enviar pull requests
-- 🌍 Ayudar con traducciones
-
-Lee **[CONTRIBUTING.md](CONTRIBUTING.md)** para más detalles.
-
----
-
-## 🏷️ Etiquetas del Proyecto
-
-`accessibility` `assistive-technology` `eye-tracking` `computer-vision` 
-`mediapipe` `opencv` `hci` `human-computer-interaction` `python` 
-`gaze-tracking` `assistive-tech` `disability-support` `open-source`
-
----
-
-## 📸 Screenshots y Demo
-
-*[Próximamente: Video demo y capturas de pantalla del proceso de calibración]*
-
-### Cómo usar MOSE
-
-1. **Iniciar**: Ejecuta `python main.py`
-2. **Calibrar**: Mira los 5 puntos y presiona ESPACIO en cada uno
-3. **¡Controlar!**: Mueve tu mirada para mover el cursor, parpadea para hacer clic
-
----
-
-## 🔬 Para Investigadores
-
-MOSE incluye documentación técnica detallada sobre:
-- Parámetros temporales de detección de parpadeo
-- Algoritmos de suavizado (Moving Average, futuro: Kalman)
-- Métricas de precisión y rendimiento
-- Pipeline de procesamiento completo
-
-Consulta **[ARCHITECTURE.md](ARCHITECTURE.md)** para información científica y técnica.
+Para ver la hoja de ruta completa, consulta la sección **"Hacia dónde vamos"** arriba.
 
 ---
 
