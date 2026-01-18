@@ -8,6 +8,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2026-01-18
 
 ### Added
+- **Events API**: Major new feature allowing external applications to consume MOSE events
+  - New `mose/events.py` module with `EventStream` and `EventType` classes
+  - Simple iterator-based API for consuming eye-tracking events
+  - Support for events: gaze_move, blink_click, blink_detected, face_detected, face_lost, calibration events, and errors
+  - Comprehensive API examples in `examples/` directory
+- **Community Resources**:
+  - `ROADMAP.md`: Clear 6-milestone development roadmap
+  - `PITCH.md`: Elevator pitch for conferences and forums (100-200 words)
+  - `GOOD_FIRST_ISSUES.md`: 20 beginner-friendly contribution ideas
+  - `DEMO_VIDEO_GUIDE.md`: Complete guide for creating demo videos
+  - `RELEASE_STRATEGY.md`: Comprehensive release and marketing strategy
+- **GitHub Discussion Templates**: 4 templates for community engagement
+  - Ideas template
+  - Q&A template
+  - Show & Tell template
+  - Accessibility-focused template
+- **API Examples**: 3 complete usage examples
+  - `simple_api_usage.py`: Basic event consumption
+  - `click_logger.py`: JSON logging of click events
+  - `custom_integration.py`: Advanced integration with custom app
+- **Testing**: 11 new unit tests for the events API module
+- **Package Distribution**: Enhanced setup.py with entry points for `pip install`
 - **Modular Architecture**: Refactored code into organized modules
   - `mose/core/`: Core functionality (face detection, eye tracking, blink detection, gaze mapping)
   - `mose/ui/`: User interface components (calibration, feedback overlay)
@@ -29,15 +51,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Improved Documentation**: Extensive inline code documentation with docstrings
 
 ### Changed
-- Updated README.md with clearer structure and information
+- Updated README.md with API documentation and installation instructions
+- Enhanced setup.py with proper metadata and console script entry point
+- Updated `mose/__init__.py` to export EventStream and EventType
+- Added `main()` function wrapper to main.py for console script support
 - Improved code organization and maintainability
 - Better separation of concerns between components
 
 ### Technical Improvements
+- Version consistently set to 1.1.0 across all files
 - All core logic properly documented with docstrings
 - Configuration parameters clearly exposed and documented
 - Temporal parameters for blink detection documented
 - Smoothing algorithm (moving average) explained
+- Full test coverage for events API (11 tests, 100% passing)
 
 ## [1.0.0] - 2026-01-XX (Initial Release)
 
