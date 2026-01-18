@@ -22,10 +22,10 @@ setup(
         ],
     },
     install_requires=[
-        "opencv-python==4.8.1.78",
-        "mediapipe==0.10.8",
-        "pyautogui==0.9.54",
-        "numpy==1.24.3",
+        "opencv-python>=4.8.0,<5.0",
+        "mediapipe>=0.10.8,<0.11",
+        "pyautogui>=0.9.50,<1.0",
+        "numpy>=1.24.0,<2.0",
     ],
     extras_require={
         "test": [

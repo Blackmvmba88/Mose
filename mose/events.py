@@ -45,7 +45,7 @@ class Event:
     Represents a single MOSE event
     
     Attributes:
-        type: The type of event (EventType enum)
+        type: The type of event as a string (value from EventType enum)
         timestamp: Unix timestamp when event occurred
         data: Dictionary containing event-specific data
     """
@@ -88,7 +88,6 @@ class EventStream:
         self.mirror_mode = mirror_mode
         self.auto_calibrate = auto_calibrate
         self._running = False
-        self._event_queue = []
         
     def __iter__(self) -> Iterator[Event]:
         """

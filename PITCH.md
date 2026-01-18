@@ -41,7 +41,7 @@ Python 3.9+, GPL-3.0, lista para usar hoy.
 "MOSE democratiza tecnología de eye-tracking que antes costaba miles. Personas con limitaciones motoras pueden controlar su computadora naturalmente, sin dispositivos adicionales. Python open-source."
 
 ### Para Reddit / Hacker News
-"Built an open-source eye-tracking mouse controller that works with any webcam. No special hardware, runs on any OS. Look to point, blink to click. MIT/GPL, Python, takes 5min to install."
+"Built an open-source eye-tracking mouse controller that works with any webcam. No special hardware, runs on any OS. Look to point, blink to click. GPL-3.0, Python, takes 5min to install."
 
 ### Para Comunidades de Desarrolladores
 "MOSE expone una API simple de eventos de eye-tracking. Integra control por mirada en cualquier aplicación Python con 3 líneas de código. Computer vision sin complejidad."
