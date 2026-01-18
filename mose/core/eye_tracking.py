@@ -21,6 +21,11 @@ class EyeTracker:
     LEFT_IRIS = 468
     RIGHT_IRIS = 473
     
+    # Eye landmark indices for aspect ratio calculation
+    # These represent the top and bottom points of the eye
+    EYE_TOP_INDEX = 12    # Top of eye (from eye landmark array)
+    EYE_BOTTOM_INDEX = 4  # Bottom of eye (from eye landmark array)
+    
     def __init__(self):
         """Initialize the eye tracker."""
         pass
@@ -57,8 +62,8 @@ class EyeTracker:
         Returns:
             float: Eye aspect ratio (vertical distance)
         """
-        top = landmarks[eye_indices[12]]
-        bottom = landmarks[eye_indices[4]]
+        top = landmarks[eye_indices[self.EYE_TOP_INDEX]]
+        bottom = landmarks[eye_indices[self.EYE_BOTTOM_INDEX]]
         
         dist = np.linalg.norm(
             np.array([top.x, top.y]) - np.array([bottom.x, bottom.y])

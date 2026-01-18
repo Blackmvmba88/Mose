@@ -63,24 +63,16 @@ class FeedbackOverlay:
         """
         Draw polygons around eye regions.
         
+        Note: Currently disabled by default to avoid cluttering the display.
+        Enable by uncommenting the code below if needed.
+        
         Args:
             image: OpenCV image to draw on
             landmarks: Face mesh landmarks
             left_eye_indices: List of landmark indices for left eye
             right_eye_indices: List of landmark indices for right eye
         """
-        h, w, _ = image.shape
-        
-        for eye_indices in [left_eye_indices, right_eye_indices]:
-            points = []
-            for idx in eye_indices:
-                p = landmarks[idx]
-                points.append((int(p.x * w), int(p.y * h)))
-            
-            # Draw polygon (optional, can be commented out if too cluttered)
-            # import numpy as np
-            # points_array = np.array(points, dtype=np.int32)
-            # cv2.polylines(image, [points_array], True, (0, 255, 0), 1)
+        pass  # Optional visualization feature - can be enabled in future config
     
     def trigger_click_feedback(self):
         """Trigger visual feedback for a click event."""

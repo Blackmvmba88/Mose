@@ -179,8 +179,7 @@ class OcularisMose:
     def _restart_calibration(self):
         """Restart the calibration process."""
         self.calibrator.reset()
-        self.gaze_mapper.calibrated = False
-        self.gaze_mapper.reset_smoothing()
+        self.gaze_mapper.reset_calibration()
         print("\n🔄 Calibration reset. Press 'c' again and follow instructions.")
 
 

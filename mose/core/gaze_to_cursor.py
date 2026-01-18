@@ -12,6 +12,13 @@ class GazeToCursor:
     Includes calibration, normalization, and smoothing via moving average filter.
     """
     
+    # Default calibration ranges (centered on screen)
+    # These are used before calibration is performed
+    DEFAULT_MIN_X = 0.4
+    DEFAULT_MAX_X = 0.6
+    DEFAULT_MIN_Y = 0.4
+    DEFAULT_MAX_Y = 0.6
+    
     def __init__(self, screen_width, screen_height, buffer_size=8):
         """
         Initialize the gaze-to-cursor mapper.
@@ -30,10 +37,10 @@ class GazeToCursor:
         self.smooth_y = []
         
         # Calibration ranges (will be set during calibration)
-        self.min_x = 0.4
-        self.max_x = 0.6
-        self.min_y = 0.4
-        self.max_y = 0.6
+        self.min_x = self.DEFAULT_MIN_X
+        self.max_x = self.DEFAULT_MAX_X
+        self.min_y = self.DEFAULT_MIN_Y
+        self.max_y = self.DEFAULT_MAX_Y
         self.calibrated = False
     
     def set_calibration(self, min_x, max_x, min_y, max_y):
@@ -89,6 +96,15 @@ class GazeToCursor:
         screen_y = int(target_y * self.screen_h)
         
         return screen_x, screen_y
+    
+    def reset_calibration(self):
+        """Reset calibration to defaults."""
+        self.min_x = self.DEFAULT_MIN_X
+        self.max_x = self.DEFAULT_MAX_X
+        self.min_y = self.DEFAULT_MIN_Y
+        self.max_y = self.DEFAULT_MAX_Y
+        self.calibrated = False
+        self.reset_smoothing()
     
     def reset_smoothing(self):
         """Clear smoothing buffers (useful when starting tracking)."""
