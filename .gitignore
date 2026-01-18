@@ -4,3 +4,11 @@ __pycache__/
 .DS_Store
 .env
 .ipynb_checkpoints/
+.coverage
+.pytest_cache/
+htmlcov/
+*.egg-info/
+dist/
+build/
+test_results.txt
+coverage.xml
