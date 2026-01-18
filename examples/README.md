@@ -66,12 +66,58 @@ Next steps:
   3. Start using eye tracking!
 ```
 
+## API Examples
+
+MOSE provides a simple events API for integration with other applications.
+
+### simple_api_usage.py
+
+Basic example showing how to consume MOSE events.
+
+**Usage**:
+```bash
+python examples/simple_api_usage.py
+```
+
+**What it demonstrates**:
+- Using the `mose.events()` function
+- Processing different event types
+- Simple event handling
+
+### click_logger.py
+
+Logs all click events to a JSON file.
+
+**Usage**:
+```bash
+python examples/click_logger.py
+```
+
+**What it demonstrates**:
+- Filtering specific event types
+- Saving event data to file
+- Timestamping events
+
+### custom_integration.py
+
+Shows how to integrate MOSE into a custom application.
+
+**Usage**:
+```bash
+python examples/custom_integration.py
+```
+
+**What it demonstrates**:
+- Creating custom event handlers
+- Session statistics tracking
+- Application-specific logic
+
 ## Future Examples
 
 More examples will be added:
 - Camera detection and selection
 - Custom calibration patterns
-- Integration with other applications
+- Multi-monitor support
 - Performance benchmarking
 - Advanced configuration examples
 
